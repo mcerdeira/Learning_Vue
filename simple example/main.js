@@ -1,6 +1,14 @@
 var app = new Vue({
     el: "#app",
-    data: { 
+    methods: {
+        addToCart() {
+            this.cart++;
+        },
+        updateProduct(variantImage){
+            this.image = variantImage;
+        }
+    },
+    data: {
         product: "Socks",
         description: "A pair of warm, fuzzy socks",
         altText: "A pair of warm, fuzzy socks",
@@ -12,11 +20,14 @@ var app = new Vue({
             {
                 variantId: 1,
                 variantColor: "Green",
+                variantImage: "./assets/vmSocks-green-onWhite.jpg",
             },
             {
                 variantId: 2,
                 variantColor: "Blue",
+                variantImage: "./assets/vmSocks-blue-onWhite.jpg",
             },
         ],
+        cart: 0,
     }
 })

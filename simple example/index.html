@@ -11,10 +11,13 @@
 
             <ul>
                 <li v-for="v in variants" :key="v.variantId">
-                    {{v.variantColor}}
+                    <!-- v-on:mouseover es lo mismo que @mouseover -->
+                    <p @mouseover="updateProduct(v.variantImage)">
+                        {{v.variantColor}}
+                    </p>
                 </li>
             </ul>
-
+            <br>
             <ul>
                 <li v-for="d in details">{{d}}</li>
             </ul>
@@ -26,6 +29,11 @@
             <p v-show="inventory <= 10 && inventory > 0"> Hurry!!! </p>
         </div>
     </div>
+    <div class="cart">
+        <p> Cart {{cart}} </p>
+    </div>
+    <!-- v-on:click es lo mismo que @click -->
+    <button @click="addToCart">Add to Cart</button>
 </div>
 <script src="vue.js"> </script>
 <script src="main.js"> </script>
