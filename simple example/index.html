@@ -10,12 +10,19 @@
             <p>{{description}}</p>
 
             <ul>
+                <!--
                 <li v-for="v in variants" :key="v.variantId">
-                    <!-- v-on:mouseover es lo mismo que @mouseover -->
                     <p @mouseover="updateProduct(v.variantImage)">
                         {{v.variantColor}}
                     </p>
                 </li>
+                -->
+                <div class="color-box" 
+                    v-for="v in variants"
+                    :key="v.variantId"
+                    :style="{backgroundColor: v.variantColor }"
+                    @mouseover="updateProduct(v.variantImage)">
+                </div>
             </ul>
             <br>
             <ul>
